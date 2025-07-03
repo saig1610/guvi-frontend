@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/php/signup.php"; // ✅ Correct backend path
+  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/signup.php"; // ✅ Correct backend path
 
   const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   const contactRegex = /^[0-9]{10}$/;
