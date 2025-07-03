@@ -1,7 +1,7 @@
 $(document).ready(function () { 
   console.log("🧠 profile.js is running!");
 
-  const BACKEND_BASE_URL = "https://guvi-backend-1-a6kc.onrender.com"; // ✅ Removed /php
+  const BACKEND_BASE_URL = "https://guvi-backend-1-a6kc.onrender.com"; // ✅ Backend URL
 
   const email = localStorage.getItem("loggedInUser");
   console.log("📧 Found email in localStorage:", email);
@@ -12,7 +12,7 @@ $(document).ready(function () {
     return;
   }
 
-  // 🔄 Fetch user profile
+  // 🔄 Fetch user profile (working correctly)
   $.ajax({
     url: `${BACKEND_BASE_URL}/fetch_profile.php`,
     method: "POST",
@@ -37,13 +37,22 @@ $(document).ready(function () {
     }
   });
 
-  // 💾 Save profile
+  // 💾 Save profile (FIXED ✅)
   $(".btn-success").click(function () {
+    const age = $("#editAge").val().trim();
+    const dob = $("#editDob").val().trim();
+    const contact = $("#editContact").val().trim();
+
+    if (!age || !dob || !contact) {
+      alert("Please fill all fields before saving.");
+      return;
+    }
+
     const data = {
       email,
-      age: $("#editAge").val(),
-      dob: $("#editDob").val(),
-      contact: $("#editContact").val()
+      age,
+      dob,
+      contact
     };
 
     console.log("💾 Sending update data:", data);
@@ -51,7 +60,9 @@ $(document).ready(function () {
     $.ajax({
       url: `${BACKEND_BASE_URL}/update_profile.php`,
       method: "POST",
-      data: data,
+      data: $.param(data),  // ✅ Converts to URL-encoded string
+      contentType: "application/x-www-form-urlencoded; charset=UTF-8", // ✅ Ensures PHP reads $_POST
+      processData: true,
       dataType: "json",
       success: function (res) {
         console.log("✅ update_profile.php response:", res);
