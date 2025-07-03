@@ -1,7 +1,7 @@
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/login.php"; // ✅ Live backend URL
+  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/php/login.php"; // ✅ Fixed path
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();

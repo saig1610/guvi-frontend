@@ -1,7 +1,7 @@
 $(document).ready(function () { 
   console.log("🧠 profile.js is running!");
 
-  const BACKEND_BASE_URL = "https://guvi-backend-1-a6kc.onrender.com"; // ✅ Live backend
+  const BACKEND_BASE_URL = "https://guvi-backend-1-a6kc.onrender.com/php"; // ✅ Added /php
 
   const email = localStorage.getItem("loggedInUser");
   console.log("📧 Found email in localStorage:", email);
