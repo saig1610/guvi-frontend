@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const BACKEND_URL = "https://yourbackend.epizy.com/signup.php"; // ⬅️ Replace with your actual backend URL
+  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/signup.php"; // ✅ Live backend endpoint
 
   const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   const contactRegex = /^[0-9]{10}$/;
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: 'POST',
-      url: BACKEND_URL, // ✅ Using full URL to hosted PHP file
+      url: BACKEND_URL,
       data: data,
       dataType: 'json',
       success: function (response) {

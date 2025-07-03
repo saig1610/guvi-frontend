@@ -1,7 +1,7 @@
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const BACKEND_URL = "https://yourbackend.epizy.com/login.php"; // 🔁 Replace with your actual backend URL
+  const BACKEND_URL = "https://guvi-backend-1-a6kc.onrender.com/login.php"; // ✅ Live backend URL
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -42,7 +42,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     .then(data => {
       console.log("✅ Server response:", data);
 
-      if (data.status === "success") {
+      if (data.success === true) {
         // ✅ Store email in localStorage before redirect
         localStorage.setItem("loggedInUser", email);
         console.log("📥 Stored email in localStorage:", email);
