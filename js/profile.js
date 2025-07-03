@@ -21,12 +21,12 @@ $(document).ready(function () {
     success: function (res) {
       console.log("✅ fetch_profile.php response:", res);
 
-      if (res.success && res.user) {
-        $("#userName").text(res.user.name || "No Name");
-        $("#userEmail").text(res.user.email || email);
-        $("#userAge").text(res.user.age || "--");
-        $("#userDob").text(res.user.dob || "--");
-        $("#userContact").text(res.user.contact || "--");
+      if (res.success && res.data) {
+        $("#userName").text(res.data.name || "No Name");
+        $("#userEmail").text(res.data.email || email);
+        $("#userAge").text(res.data.age || "--");
+        $("#userDob").text(res.data.dob || "--");
+        $("#userContact").text(res.data.contact || "--");
       } else {
         alert(res.message || "User not found.");
       }
