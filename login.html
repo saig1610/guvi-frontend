@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - GUVI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome for eye icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-image: url('assets/login.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+      background-color: rgba(33, 37, 41, 0.85);
+      color: white;
+      padding: 50px 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      max-width: 550px;
+    }
+
+    input.form-control {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: white;
+    }
+
+    input.form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-glow {
+      background-color: #ff0077;
+      border: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 10px #ff0077, 0 0 20px #ff0077;
+      background-color: #2a2af2;
+    }
+
+    #togglePassword {
+      position: absolute;
+      top: 38px;
+      right: 15px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="form-container">
+      <h2 class="text-center fw-bold text-white" style="font-size: 2rem; letter-spacing: 1px; margin-bottom: 15px;">
+        Welcome Back ✨
+      </h2>
+      <p class="text-center text-white-50 mb-4" style="font-style: italic;">
+        Login to access your account ✅
+      </p>
+
+      <form id="loginForm">
+        <div class="mb-3">
+          <label>Email</label>
+          <input type="text" class="form-control" id="email" placeholder="example@gmail.com" />
+          <small id="emailError" class="text-danger"></small>
+        </div>
+
+        <div class="mb-3 position-relative">
+          <label>Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" />
+          <i id="togglePassword" class="fa fa-eye"></i>
+          <small id="passwordError" class="text-danger"></small>
+        </div>
+
+        <button type="submit" class="btn btn-glow w-100 mt-2 text-white">Login</button>
+      </form>
+
+      <div id="responseMsg" class="mt-3 text-center text-info"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
